@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+	
+	<ui:decorate template="index.xhtml">
+		<ui:define name="centro">
+			<h:form>
+				<center>
+					<p:outputLabel value="Deseja realmente excluir o contato #{contatoController.contatoB.nome}?" styleClass="ExcluirContato"></p:outputLabel>
+					<p:separator style="width: 80%; height: 5px"/>
+					<p:commandButton value="Excluir" action="#{contatoController.excluirContato()}"/>
+					<p:commandButton value="Cancelar" action="listarcontatos"/>
+				</center>
+			</h:form>
+		</ui:define>
+	</ui:decorate>
+</html>

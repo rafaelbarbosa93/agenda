@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+	
+	<ui:decorate template="index.xhtml">
+		<ui:define name="centro">
+			<h:form>
+				<p:dataTable value="#{contatoController.listaContato}" var="lista">
+					<p:column headerText="ID" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.id}"/>
+					</p:column>
+					
+					<p:column headerText="NOME" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.nome}"/>
+					</p:column>
+					
+					<p:column headerText="ENDERECO" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.endereco}"/>
+					</p:column>
+					
+					<p:column headerText="CIDADE" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.cidade}"/>
+					</p:column>
+					
+					<p:column headerText="UF" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.uf}"/>
+					</p:column>
+					
+					<p:column headerText="TELEFONE" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.telefone}"/>
+					</p:column>
+					
+					<p:column headerText="CELULAR" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.celular}"/>
+					</p:column>
+					
+					<p:column headerText="EMAIL" styleClass="AlinhamentoTabela">
+						<p:outputLabel value="#{lista.email}"/>
+					</p:column>
+					
+					<p:column headerText="*" styleClass="AlinhamentoTabela">
+						<p:commandLink action="editarcontato" actionListener="#{contatoController.selecionarContato()}">
+							<p:graphicImage value="/Imagens/editar.png" width="36" height="36"/>
+						</p:commandLink>
+					</p:column>
+					
+					<p:column headerText="*" styleClass="AlinhamentoTabela">
+						<p:commandLink action="excluircontato" actionListener="#{contatoController.selecionarContato()}">
+							<p:graphicImage value="/Imagens/excluir.png" width="36" height="36"/>
+						</p:commandLink>
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</ui:define>
+	</ui:decorate>
+
+
+</html>
